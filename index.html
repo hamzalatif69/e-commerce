@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaLearn — Premium Courses</title>
+  <meta name="description" content="A premium dark-theme course-selling platform built as an offline-capable Progressive Web App.">
+  <meta name="theme-color" content="#0B0F1A">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./style.css">
+  <script>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('./service-worker.js', {scope: './'});
+    }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <img src="./icons/icon-192.png" alt="NovaLearn logo" width="34" height="34">
+          <div>
+            <div class="brand-name">NovaLearn</div>
+            <div class="brand-sub">Premium Courses</div>
+          </div>
+        </div>
+
+        <div class="navlinks">
+          <a href="#/" data-nav="/">Home</a>
+          <a href="#/courses" data-nav="/courses">Courses</a>
+          <a href="#/about" data-nav="/about">About</a>
+          <a href="#/contact" data-nav="/contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="btn" id="installBtn" type="button" hidden>Install app</button>
+          <button class="btn" id="enrollmentsBtn" type="button">Enrollments</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <h1 id="routeTitle">Loading…</h1>
+      <div id="app">Loading…</div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-name">NovaLearn</div>
+          <p class="muted" style="margin-top:6px; line-height:1.55">A premium course platform built as a PWA. Install it for offline access and a focused learning experience.</p>
+        </div>
+        <div>
+          <div class="brand-name">Navigation</div>
+          <div style="display:flex; flex-direction:column; gap:6px; margin-top:6px">
+            <a href="#/">Home</a>
+            <a href="#/courses">Courses</a>
+            <a href="#/about">About</a>
+            <a href="#/contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="brand-name">Features</div>
+          <div style="display:flex; flex-direction:column; gap:6px; margin-top:6px">
+            <span class="muted">Offline-ready</span>
+            <span class="muted">Installable PWA</span>
+            <span class="muted">Dark premium UI</span>
+            <span class="muted">GitHub Pages compatible</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head">
+      <div class="drawer-title" id="drawerTitle">Drawer</div>
+      <button class="btn" id="drawerClose" type="button">Close</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
